@@ -7,15 +7,13 @@ sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 
 # install dep
 apt update
-
-apt -y install libncurses5-dev build-essential openssl
 apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev
 apt build-dep -y linux
 
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
-# download kernel source https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.7.3.tar.xz
+# download kernel source
 wget http://www.kernel.org/pub/linux/kernel/v6.x/linux-"$VERSION".tar.xz
 tar -xf linux-"$VERSION".tar.xz
 cd linux-"$VERSION" || exit
