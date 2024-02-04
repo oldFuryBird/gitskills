@@ -9,7 +9,6 @@ sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 apt update
 
 apt -y install libncurses5-dev build-essential openssl
-apt -u install  linux-image-generic 
 apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev
 apt build-dep -y linux
 
